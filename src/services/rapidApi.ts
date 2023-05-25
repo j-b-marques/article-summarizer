@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.VITE_BASE_URL
+const baseUrl = import.meta.env.VITE_URL
 const apiKey = import.meta.env.VITE_API_KEY
 const apiHost = import.meta.env.VITE_API_HOST
 
