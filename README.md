@@ -4,7 +4,7 @@ Open-source article summarizer, that minifies lengthy articles into concise summ
 
 To work, the URL pasted must have defined text paragraphs, as in an article.
 
-Try it live -> https://articles-summarizer.vercel.app/
+Try it live -> https://article-summarizer-alpha.vercel.app/
 
 Example URL to try it out: https://www.freecodecamp.org/news/vue-vs-react-comparison-of-frameworks/
 
