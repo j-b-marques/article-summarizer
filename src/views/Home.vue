@@ -122,6 +122,9 @@ import Loader from '@/assets/components/Loader.vue'
 import { useArticleStore } from '../stores/articles'
 import { options } from '../services/rapidApi'
 
+import { toast } from 'vue3-toastify'
+import 'vue3-toastify/dist/index.css'
+
 //Data
 const store = useArticleStore()
 const baseUrl: string = options.url
@@ -213,6 +216,17 @@ async function search() {
                     'Api limit was excedeed, Try again in some other time ! Sorry about the inconvenience'
                 )
                 return Promise.reject('API limit exceeded')
+            }
+            if (res.status == 503) {
+                toast.error(
+                    'An error occurred: Failed extracting text corpus from the page. Make sure you are trying to summarize a news article or another page with clearly defined blocks of text.',
+                    {
+                        pauseOnHover: true,
+                        hideProgressBar: false,
+                        autoClose: false
+                    }
+                )
+                return
             }
             return res.json()
         })
